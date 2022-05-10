@@ -14,6 +14,5 @@ jobs:
     uses:
     - ploigos/ploigos-github-workflows/.github/workflows/setup-stage-gate.yaml@main
     - ploigos/ploigos-github-workflows/.github/workflows/setup-app-clone.yaml@main
-  generate-metadata:
-    uses:  ploigos/ploigos-github-workflows/.github/workflows/generate-metadata.yaml@main
+    - ploigos/ploigos-github-workflows/.github/workflows/generate-metadata.yaml@main
 
