@@ -24,7 +24,7 @@ jobs:
       imagePullPolicy: 'Always'
       venvPath: '.'
       stepRunnerPackageName: 'psr'
-      stepName: 'step1'
+      stepName: 'test-step'
       stepRunnerConfigDir: '/opt/'
   ci-package-application:
     uses: ploigos/ploigos-github-workflows/.github/workflows/ci-package-application.yaml@main
