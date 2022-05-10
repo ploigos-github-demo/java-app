@@ -11,11 +11,9 @@ permissions:
   pull-requests: write
 jobs:
   setup-stage-gate:
-    uses:
-    - ploigos/ploigos-github-workflows/.github/workflows/setup-stage-gate.yaml@main
-  setup-app-clone:
-    uses:
-    - ploigos/ploigos-github-workflows/.github/workflows/setup-app-clone.yaml@main
+    uses: ploigos/ploigos-github-workflows/.github/workflows/setup-stage-gate.yaml@main
+  setupapp-clone:
+    uses: ploigos/ploigos-github-workflows/.github/workflows/setup-app-clone.yaml@main
   generate-metadata:
-    - ploigos/ploigos-github-workflows/.github/workflows/generate-metadata.yaml@main
+    uses: ploigos/ploigos-github-workflows/.github/workflows/generate-metadata.yaml@main
 
