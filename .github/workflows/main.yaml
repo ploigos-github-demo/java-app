@@ -17,7 +17,15 @@ jobs:
   ci-stage-gate:
     uses: ploigos/ploigos-github-workflows/.github/workflows/ci-stage-gate.yaml@main
   ci-generate-metadata:
-    uses: ploigos/ploigos-github-workflows/.github/workflows/ci-generate-metadata.yaml@main
+    uses: ploigos/ploigos-github-workflows/.github/workflows/ci-generate-metadata.yaml@inputs
+    with:
+      verbose: 'true'
+      image: 'ubi8-minimal'
+      imagePullPolicy: 'Always'
+      venvPath: '.'
+      stepRunnerPackageName: 'psr'
+      stepName: 'step1'
+      stepRunnerConfigDir: '/opt/'
   ci-package-application:
     uses: ploigos/ploigos-github-workflows/.github/workflows/ci-package-application.yaml@main
   ci-create-container-image:
