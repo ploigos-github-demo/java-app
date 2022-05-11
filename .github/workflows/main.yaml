@@ -41,7 +41,7 @@ jobs:
       imagePullPolicy: 'Always'
       pgpKeysSecretName: 'testtest'
   ci-generate-metadata:
-    uses: ploigos/ploigos-github-workflows/.github/workflows/ci-generate-metadata.yaml@main
+    uses: ploigos/ploigos-github-workflows/.github/workflows/ci-generate-metadata.yaml@actions
     with:
       verbose: 'true'
       image: 'ubi8-minimal'
