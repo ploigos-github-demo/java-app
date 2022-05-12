@@ -36,9 +36,9 @@ jobs:
       # Optional - this sets your Kubernetes context's current namespace after logging in.
       namespace: ${{ env.OPENSHIFT_NAMESPACE }}
   - name: Install self hosted runner into this repository
-      uses: redhat-actions/openshift-actions-runner-installer@v1
-      with:
-        github_pat: ${{ secrets.PAT }}
+    uses: redhat-actions/openshift-actions-runner-installer@v1
+    with:
+      github_pat: ${{ secrets.PAT }}
   minimal:
     needs: install-runner
     runs-on: [ self-hosted ]
