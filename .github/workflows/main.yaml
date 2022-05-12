@@ -41,7 +41,7 @@ jobs:
         github_pat: ${{ secrets.PAT }}
   minimal:
     needs: install-runner
-    uses: ploigos/ploigos-github-workflows/.github/workflows/minimal.yaml@selfhosted
+    uses: ploigos-github-demo/ploigos-github-workflows/.github/workflows/minimal.yaml@selfhosted
     with:
       verbose: 'true'
       image: 'ubi8-minimal'
