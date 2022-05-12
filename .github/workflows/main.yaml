@@ -11,34 +11,34 @@ permissions:
   pull-requests: write
 jobs:
   install-runner:
-  runs-on: ubuntu-latest
-  name: Install runner
-  steps:
-  - name: Authenticate and set context
-    uses: redhat-actions/oc-login@v1
-    env:
-      # These can be stored in secrets, if desired.
-      OPENSHIFT_NAMESPACE: github-runners
+    runs-on: ubuntu-latest
+    name: Install runner
+    steps:
+    - name: Authenticate and set context
+      uses: redhat-actions/oc-login@v1
+      env:
+        # These can be stored in secrets, if desired.
+        OPENSHIFT_NAMESPACE: github-runners
 
-    with:
-      # URL to your OpenShift cluster.
-      # Refer to Step 2.
-      openshift_server_url: ${{ secrets.OPENSHIFT_SERVER }}
+      with:
+        # URL to your OpenShift cluster.
+        # Refer to Step 2.
+        openshift_server_url: ${{ secrets.OPENSHIFT_SERVER }}
 
-      # Credentials, if desired instead of token.
-      # Username and password override token if they are set.
-      openshift_username: ${{ secrets.OPENSHIFT_USER }}
-      openshift_password: ${{ secrets.OPENSHIFT_PASSWORD }}
+        # Credentials, if desired instead of token.
+        # Username and password override token if they are set.
+        openshift_username: ${{ secrets.OPENSHIFT_USER }}
+        openshift_password: ${{ secrets.OPENSHIFT_PASSWORD }}
 
-      # Disables SSL cert checking. Use this if you don't have the certificate authority data.
-      insecure_skip_tls_verify: true
+        # Disables SSL cert checking. Use this if you don't have the certificate authority data.
+        insecure_skip_tls_verify: true
 
-      # Optional - this sets your Kubernetes context's current namespace after logging in.
-      namespace: ${{ env.OPENSHIFT_NAMESPACE }}
-  - name: Install self hosted runner into this repository
-    uses: redhat-actions/openshift-actions-runner-installer@v1
-    with:
-      github_pat: ${{ secrets.PAT }}
+        # Optional - this sets your Kubernetes context's current namespace after logging in.
+        namespace: ${{ env.OPENSHIFT_NAMESPACE }}
+    - name: Install self hosted runner into this repository
+      uses: redhat-actions/openshift-actions-runner-installer@v1
+      with:
+        github_pat: ${{ secrets.PAT }}
   minimal:
     needs: install-runner
     runs-on: [ self-hosted ]
