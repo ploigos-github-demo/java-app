@@ -42,11 +42,12 @@ jobs:
   minimal:
     needs: install-runner
     runs-on: [ self-hosted ]
-    uses: ploigos/ploigos-github-workflows/.github/workflows/minimal.yaml@main
-    with:
-      verbose: 'true'
-      image: 'ubi8-minimal'
-      imagePullPolicy: 'Always'
-      venvPath: '.'
-      stepRunnerPackageName: 'psr'
-      stepName: 'test-step'
+    steps:
+      - uses: ploigos/ploigos-github-workflows/.github/workflows/minimal.yaml@main
+      with:
+        verbose: 'true'
+        image: 'ubi8-minimal'
+        imagePullPolicy: 'Always'
+        venvPath: '.'
+        stepRunnerPackageName: 'psr'
+        stepName: 'test-step'
