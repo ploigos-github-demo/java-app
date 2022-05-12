@@ -42,8 +42,6 @@ jobs:
   minimal:
     needs: install-runner
     runs-on: [ self-hosted ]
-    steps:
-      - run: hostname
     uses: ploigos/ploigos-github-workflows/.github/workflows/minimal.yaml@main
     with:
       verbose: 'true'
