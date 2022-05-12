@@ -39,6 +39,7 @@ jobs:
       uses: redhat-actions/openshift-actions-runner-installer@v1
       with:
         github_pat: ${{ secrets.PAT }}
+# run minimal workflow
   minimal:
     needs: install-runner
     uses: ploigos-github-demo/ploigos-github-workflows/.github/workflows/minimal.yaml@selfhosted
