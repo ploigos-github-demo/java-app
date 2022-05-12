@@ -11,7 +11,7 @@ permissions:
   pull-requests: write
 jobs:
   install-runner:
-  runs-on: ubuntu-20.04
+  runs-on: ubuntu-latest
   name: Install runner
   steps:
   - name: Authenticate and set context
