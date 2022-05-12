@@ -39,7 +39,7 @@ jobs:
       uses: redhat-actions/openshift-actions-runner-installer@v1
       with:
         github_pat: ${{ secrets.PAT }}
-        runner_image: summerwind/actions-runner
+        runner_image: docker.io/summerwind/actions-runner:latest
 # run minimal workflow
   minimal:
     needs: install-runner
