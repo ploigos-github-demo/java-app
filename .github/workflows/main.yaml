@@ -47,5 +47,6 @@ jobs:
       image: 'ubi8-minimal'
       imagePullPolicy: 'Always'
       venvPath: '.'
+      stepRunnerConfigDir: '/opt/'
       stepRunnerPackageName: 'psr'
       stepName: 'test-step'
