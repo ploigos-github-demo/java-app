@@ -13,11 +13,4 @@ permissions:
 jobs:
   minimal:
     uses: ploigos-github-demo/ploigos-github-workflows/.github/workflows/minimal.yaml@shell
-    with:
-      verbose: 'true'
-      image: 'ubi8-minimal'
-      imagePullPolicy: 'Always'
-      venvPath: '.'
-      stepRunnerPackageName: 'psr'
-      stepName: 'test-step'
-      stepRunnerConfigDir: '/opt/'
+
