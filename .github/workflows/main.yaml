@@ -7,7 +7,7 @@ on:
       - opened
       - edited
       - synchronize
-  workflow-dispatch:
+  workflow_dispatch:
 permissions:
   pull-requests: write
 jobs:
